@@ -1,0 +1,38 @@
+[
+    {
+        "id":1,
+        "name":"Twitter",
+        "url":"",
+        "icon":"/Social/TwitterX.svg",
+        "title":"folgen Sie mich auf X"
+    },
+    {
+        "id":2,
+        "name":"Instagram",
+        "url":"",
+        "icon":"/Social/instagram.svg",
+        "title":"folgen Sie mich auf Instagram"
+    },
+    {
+        "id":3,
+        "name":"Facebook",
+        "url":"",
+        "icon":"/Social/Facebook.svg",
+        "title":"folgen Sie mich auf Facebook"
+    },
+    {
+        "id":4,
+        "name":"Github",
+        "url":"",
+        "icon":"/Social/GitHub.svg",
+        "title":"Github Ripos"
+    },
+    {
+        "id":5,
+        "name":"Youtube",
+        "url":"",
+        "icon":"/Social/Youtube.svg",
+        "title":"folgen Sie mich auf Youtube"
+    }
+
+]
