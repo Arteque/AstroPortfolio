@@ -1,13 +1,38 @@
-<header>
-  <div class="wrapper">
-    <div class="logo">Logo</div>
-    <nav>
-      <ul>
-        <li><a href="">Home</a></li>
-        <li><a href="">About</a></li>
-        <li><a href="">Service</a></li>
-        <li><a href="">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
+---
+import Wrapper from "./ui/Wrapper.astro"
+---
+<header class="absolute w-full z-100">
+    <Wrapper>
+        <div class="top-header md:flex md:justify-between md:items-center h-12">
+            <ul class="legal md:flex md:gap-2 text-light">
+                <li><a href="">Impressum</a></li>
+                <li><a href="">Datenschutz</a></li>
+            </ul>
+            <ul class="social md:flex md:gap-2">
+                <li><a href=""><img src="/Social/TwitterX.svg" alt="Twitter X Icon" /></a></li>
+                <li><a href=""><img src="/Social/Facebook.svg" alt="Facebook Icon" /></a></li>
+                <li><a href=""><img src="/Social/Instagram.svg" alt="Instagram Icon" /></a></li>
+                <li><a href=""><img src="/Social/Github.svg" alt="Github Icon" /></a></li>
+                <li><a href=""><img src="/Social/Youtube.svg" alt="Youtube Icon" /></a></li>
+            </ul>
+        </div>
+        <div class="main-header rounded-2xl shadow-lg bg-light md:flex md:justify-between md:items-center">
+            <div class="logo text-blue">
+                <a href="/">
+                    <img src="/MainLogo.svg" alt="Ahmed Lemssiah Portfolio Logo">
+                </a>
+            </div>
+            <nav>
+                <div class="burger md:hidden">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <ul class="MainNav md:flex md:gap-2">
+                    <li><a href="" class="">Start</a></li>
+                    <li><a href="" class="">Über mich</a></li>
+                    <li><a href="" class="">Leistungen</a></li>
+                    <li><a href="" class="">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </Wrapper>
 </header>

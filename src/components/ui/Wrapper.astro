@@ -1,5 +1,6 @@
 ---
-const text = "Test";
+
+const { text} = Astro.props
 ---
 
-<div class="wrapper container px-5 md:mx-auto md:p-0">{text}</div>
+<div class="container px-5 md:mx-auto md:p-0"><slot /></div>
