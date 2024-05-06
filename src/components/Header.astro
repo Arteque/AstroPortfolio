@@ -1,29 +1,25 @@
 ---
 import Wrapper from "./ui/Wrapper.astro";
 const currentPath = Astro.url.pathname;
+import socialsJson from "../data/socials.json";
 ---
 
 <header class="fixed w-full left-0 right-0 top-0">
   <Wrapper>
     <div class="top-header flex justify-end items-center h-12">
-      <ul class="social flex gap-2">
-        <li>
-          <a href=""><img src="/Social/TwitterX.svg" alt="Twitter X Icon" /></a>
-        </li>
-        <li>
-          <a href=""><img src="/Social/Facebook.svg" alt="Facebook Icon" /></a>
-        </li>
-        <li>
-          <a href=""><img src="/Social/Instagram.svg" alt="Instagram Icon" /></a
-          >
-        </li>
-        <li>
-          <a href=""><img src="/Social/Github.svg" alt="Github Icon" /></a>
-        </li>
-        <li>
-          <a href=""><img src="/Social/Youtube.svg" alt="Youtube Icon" /></a>
-        </li>
-      </ul>
+      {
+        socialsJson && (
+          <ul class="social flex gap-2">
+            {socialsJson.map((item) => (
+              <li>
+                <a href={item.url} target="_blank" title={item.title}>
+                  <img src={item.icon} alt={item.title} />
+                </a>
+              </li>
+            ))}
+          </ul>
+        )
+      }
     </div>
     <div
       class="main-header relative rounded-2xl shadow-lg bg-light flex justify-between items-center"
@@ -90,13 +86,13 @@ const currentPath = Astro.url.pathname;
     opacity: 0;
     top: 150%;
     transition: all 0.5s;
-    pointer-event: none;
+    pointer-events: none;
     z-index: 0;
   }
   .MainNav.open {
     opacity: 1;
     top: 130%;
-    pointer-event: all;
+    pointer-events: all;
     z-index: 100;
   }
   .burger.open .fa-bars {
@@ -112,7 +108,7 @@ const currentPath = Astro.url.pathname;
     position: absolute;
     inset: 0;
     pointer-events: none;
-    z-index: 0;
+    z-index: 10;
     backdrop-filter: blur(2px) grayscale(0.5);
   }
 </style>

@@ -10,7 +10,7 @@
         "id":2,
         "name":"Instagram",
         "url":"",
-        "icon":"/Social/instagram.svg",
+        "icon":"/Social/Instagram.svg",
         "title":"folgen Sie mich auf Instagram"
     },
     {
@@ -24,7 +24,7 @@
         "id":4,
         "name":"Github",
         "url":"",
-        "icon":"/Social/GitHub.svg",
+        "icon":"/Social/Github.svg",
         "title":"Github Ripos"
     },
     {

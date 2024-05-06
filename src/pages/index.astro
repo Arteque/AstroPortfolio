@@ -1,29 +1,51 @@
 ---
 import Wrapper from "../components/ui/Wrapper.astro";
 import Layout from "../layouts/Layout.astro";
-import "../socials.json";
+import toolsJson from "../data/tools.json";
 ---
 
 <Layout title="Index">
   <section
     id="hero"
-    class="bg-dark h-screen"
+    class="bg-dark h-screen overflow-hidden"
     style="background-image:url(/BgDots.svg); background-size:cover;background-position:bottom; background-repeat: no-repeat;"
   >
     <Wrapper classes="flex flex-col justify-end h-screen text-center">
       <div class="col-1">
-        <h1>
+        <h1 class="mt-10">
           <span class="uppercase text-xs text-light"> Ahmed Lemssiah </span>
-          <span class="uppercase text-xl font-black text-light my-4 block">
+          <span class="uppercase text-xl font-black text-light block">
             Frontend<em
               class="text-green shadow-xl inline-block rotate-[15deg] scale-125 z-0"
               >Web</em
             >Entwickler
           </span>
         </h1>
+        <p class="text-light text-center text-xs mt-2">
+          Ich manipuliere Pixel, um Visionen ins Leben zur Erwecken
+        </p>
+        {
+          toolsJson && (
+            <ul class="flex gap-4 mx-auto w-fit my-5">
+              {toolsJson.map((item) => (
+                <li>
+                  <a href={item.url} title={item.title}>
+                    <img class="h-[30px]" src={item.icon} alt={item.name} />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )
+        }
+        <div class="call">
+          <a href="" class="call text-light font-black text-2xl uppercase">
+            Portfolio
+          </a>
+        </div>
       </div>
       <div class="col-2">
         <img
+          class="w-[70%] mx-auto translate-y-10"
           src="/Avatar.svg"
           alt="Ahmed Lemssiah Portfolio Hero Avatar Bild"
         />
@@ -31,3 +53,22 @@ import "../socials.json";
     </Wrapper>
   </section>
 </Layout>
+
+<style>
+  a.call {
+    position: relative;
+    padding-inline-end: 1rem;
+    display: inline-block;
+  }
+  a.call::after {
+    content: "";
+    position: absolute;
+    height: 25px;
+    bottom: -18px;
+    left: 0;
+    right: 0px;
+    background-image: url(/UnderLine.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+</style>
