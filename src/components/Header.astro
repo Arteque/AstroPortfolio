@@ -1,14 +1,11 @@
 ---
 import Wrapper from "./ui/Wrapper.astro"
 ---
-<header class="absolute w-full z-100">
+<header class="fixed w-full left-0 right-0 top-0">
     <Wrapper>
-        <div class="top-header md:flex md:justify-between md:items-center h-12">
-            <ul class="legal md:flex md:gap-2 text-light">
-                <li><a href="">Impressum</a></li>
-                <li><a href="">Datenschutz</a></li>
-            </ul>
-            <ul class="social md:flex md:gap-2">
+        <div class="top-header flex justify-end items-center h-12">
+            
+            <ul class="social flex gap-2">
                 <li><a href=""><img src="/Social/TwitterX.svg" alt="Twitter X Icon" /></a></li>
                 <li><a href=""><img src="/Social/Facebook.svg" alt="Facebook Icon" /></a></li>
                 <li><a href=""><img src="/Social/Instagram.svg" alt="Instagram Icon" /></a></li>
@@ -16,23 +13,75 @@ import Wrapper from "./ui/Wrapper.astro"
                 <li><a href=""><img src="/Social/Youtube.svg" alt="Youtube Icon" /></a></li>
             </ul>
         </div>
-        <div class="main-header rounded-2xl shadow-lg bg-light md:flex md:justify-between md:items-center">
-            <div class="logo text-blue">
+        <div class="main-header relative rounded-2xl shadow-lg bg-light flex justify-between items-center">
+            <div class="logo pl-2">
                 <a href="/">
                     <img src="/MainLogo.svg" alt="Ahmed Lemssiah Portfolio Logo">
                 </a>
             </div>
             <nav>
-                <div class="burger md:hidden">
-                    <i class="fa-solid fa-bars"></i>
+                <div class="burger px-2 py-3 md:display-none">
+                    <i class="fa-solid fa-bars fa-2x"></i>
+                    <i class="fa-solid fa-times fa-2x"></i>
                 </div>
-                <ul class="MainNav md:flex md:gap-2">
-                    <li><a href="" class="">Start</a></li>
-                    <li><a href="" class="">Über mich</a></li>
-                    <li><a href="" class="">Leistungen</a></li>
-                    <li><a href="" class="">Kontakt</a></li>
+                <ul class="MainNav absolute opacity-1 w-full pointer-events-auto z-100 top-[110%] right-0 bg-light p-5 rounded-b-xl md:relative md:flex md:gap-2">
+                    <li><a href="/" class="block text-center py-2 ">Start</a></li>
+                    <li><a href="/about" class="block text-center py-2">Über mich</a></li>
+                    <li><a href="/service" class="block text-center py-2">Leistungen</a></li>
+                    <li><a href="/contact" class="block text-center py-2">Kontakt</a></li>
                 </ul>
             </nav>
         </div>
     </Wrapper>
 </header>
+<style>
+    .MainNav::before{
+        content:"";
+        position:absolute;
+        top: -10px;
+        right:0;
+        rotate:45deg;
+        background-color: var(--tw-bg-light);
+        width:20px;
+        aspect-ratio:1;
+    }
+    .burger.open .fa-bars{
+        display:none;
+    }
+    .burger:not(.open) .fa-times{
+        display:none;
+    }
+    .MainNav{
+        opacity:0;
+        top:120%;
+        transition: all 0.5s;
+        pointer-event:none;
+        z-index:0;
+    }
+    .MainNav.open{
+        opacity:1;
+        top:110%;
+        pointer-event:all;
+        z-index:100;
+    }
+    body.open::before{
+        content:"";
+        background-image:linear-gradient(to top, #000 0%, transparent 150%);
+        position:absolute;
+        inset:0;
+        pointer-events: none;
+        z-index:0;
+    }
+</style>
+<script>
+    const burger = document.querySelector(".burger")
+    const MainNav = document.querySelector(".MainNav")
+    const body = document.body
+
+    burger.addEventListener("click", (e)=> {
+        e.preventDefault()
+        burger.classList.toggle("open")
+        MainNav.classList.toggle("open")
+        body.classList.toggle("open")
+    })
+</script>
