@@ -2,6 +2,8 @@
 import Wrapper from "../components/ui/Wrapper.astro";
 import Layout from "../layouts/Layout.astro";
 import toolsJson from "../data/tools.json";
+import WrapperBig from "../components/ui/WrapperBig.astro";
+import Contact from "../components/Contact.astro";
 ---
 
 <Layout title="Index">
@@ -52,6 +54,9 @@ import toolsJson from "../data/tools.json";
       </div>
     </Wrapper>
   </section>
+  <WrapperBig classes="fixed bottom-0 left-0 right-0 pointer-events-none">
+    <Contact />
+  </WrapperBig>
 </Layout>
 
 <style>

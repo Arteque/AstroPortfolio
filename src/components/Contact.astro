@@ -1,0 +1,51 @@
+<button class="absolute bottom-1 right-0 z-10 pointer-events-auto">
+    <img class="w-[32px]" src="/Message.svg" alt="Ahmed Lemssiah per Mail Kontaktieren!">
+</button>
+<form class="p-5 max-w-[90%] mx-auto bg-blue rounded-lg">
+
+    <div class="sm:col-span-3 mb-5">
+        <label for="vorname" class="block text-sm font-medium leading-6 text-gray-900">Vorname</label>
+        <div class="mt-2">
+          <input type="text" name="vorname" id="vorname" autocomplete="given-name" class="px-1 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+        </div>
+    </div>
+    
+    <div class="sm:col-span-3 mb-5">
+        <label for="nachname" class="block text-sm font-medium leading-6 text-gray-900">Nachname</label>
+        <div class="mt-2">
+          <input type="text" name="nachname" id="nachname" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+        </div>
+    </div>
+
+    <div class="sm:col-span-3 mb-5">
+        <label for="status" class="block text-sm font-medium leading-6 text-gray-900">Status</label>
+        <div class="mt-2">
+            <select id="status" name="status" autocomplete="status-name" class="block w-full rounded-md border-0 py-1.5 text-dark shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue sm:max-w-xs sm:text-sm sm:leading-6">
+            <option>Geschäftlich</option>
+            <option>Privateperson</option>
+            </select>
+        </div>
+    </div>
+</form>
+<style>
+    form{
+        transform:translateY(-20px);
+        pointer-events:none;
+        opacity:0;
+        transition: all 0.5s;
+    }
+    form.open{
+        transform:translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+</style>
+<script>
+    const messageBtn = document.querySelector("button")
+    const contactForm = document.querySelector("form")
+    messageBtn.addEventListener("click", (e) => {
+        e.preventDefault()
+        messageBtn.classList.toggle("open")
+        contactForm.classList.toggle("open")
+    })
+</script>
