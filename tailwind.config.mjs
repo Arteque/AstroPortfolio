@@ -11,7 +11,7 @@ export default {
 			lightgreen: "#8FF299"
 		},
 		fontFamily: {
-			'sans': ['Switzer', 'sans-serif'],
+			'sans': ['Inter var', 'ui-sans-serif', 'system-ui', 'sans-serif', "Apple Color Emoji", "Segoe UI Emoji", 'Segoe UI Symbol', "Noto Color Emoji"],
 		},
 		extend: {},
 	},

@@ -3,8 +3,9 @@
     padding:0;
     box-sizing:border-box;
 }
+
 header{
-    z-index: 999;
+    z-index: 100;
 }
 ul[class]{
     list-style:none;
