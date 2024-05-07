@@ -12,7 +12,9 @@ import Contact from "../components/Contact.astro";
     class="bg-dark h-screen overflow-hidden"
     style="background-image:url(/BgDots.svg); background-size:cover;background-position:bottom; background-repeat: no-repeat;"
   >
-    <Wrapper classes="flex flex-col justify-end h-[100svh] text-center">
+    <Wrapper
+      classes="flex flex-col justify-end h-[100svh] text-center sm:flex-row-reverse sm:items-center"
+    >
       <div class="col-1">
         <h1 class="mt-10">
           <span class="uppercase text-light mb-2 block"> Ahmed Lemssiah </span>
@@ -46,9 +48,9 @@ import Contact from "../components/Contact.astro";
           </a>
         </div>
       </div>
-      <div class="col-2">
+      <div class="col-2 sm:w-[50vw] sm:max-w-[1000px]">
         <img
-          class="w-[70%] mx-auto translate-y-10"
+          class="w-[70%] mx-auto translate-y-10 sm:w-full block"
           src="/Avatar.svg"
           alt="Ahmed Lemssiah Portfolio Hero Avatar Bild"
         />

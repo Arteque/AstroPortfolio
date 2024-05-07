@@ -30,38 +30,39 @@ import socialsJson from "../data/socials.json";
         </a>
       </div>
       <nav>
-        <div class="burger px-2 py-3 md:display-none">
+        <div class="burger px-2 py-3 sm:hidden">
           <i class="fa-solid fa-bars fa-2x"></i>
           <i class="fa-solid fa-times fa-2x"></i>
         </div>
         <ul
-          class="MainNav absolute opacity-1 w-full pointer-events-auto z-100 top-[110%] right-0 bg-light p-5 rounded-b-xl rounded-tl-xl md:relative md:flex md:gap-2"
+          class="MainNav absolute w-full pointer-events-auto z-100 top-[110%] right-0 bg-light p-5 rounded-b-xl rounded-tl-xl
+          sm:relative sm:flex sm:gap-2 sm:opacity-1 sm:bg-none sm:rounded-xl sm:font-semibold"
         >
           <li>
             <a
               href="/"
-              class={`block text-center py-2 ${currentPath === "/" && "current"}`}
+              class={`block text-center py-2 sm:py-0 px-2 mx-2 ${currentPath === "/" && "current"}`}
               >Start</a
             >
           </li>
           <li>
             <a
               href="/about"
-              class={`block text-center py-2 ${currentPath === "/about" && "current"}`}
+              class={`block text-center py-2 sm:py-0 px-2 mx-2 ${currentPath === "/about" && "current"}`}
               >Über mich</a
             >
           </li>
           <li>
             <a
               href="/service"
-              class={`block text-center py-2 ${currentPath === "/service" && "current"}`}
+              class={`block text-center py-2 sm:py-0 px-2 mx-2 ${currentPath === "/service" && "current"}`}
               >Leistungen</a
             >
           </li>
           <li>
             <a
               href="/contact"
-              class={`block text-center py-2 ${currentPath === "/contact" && "current"}`}
+              class={`block text-center py-2 sm:py-0 px-2 mx-2 ${currentPath === "/contact" && "current"}`}
               >Kontakt</a
             >
           </li>
@@ -95,6 +96,7 @@ import socialsJson from "../data/socials.json";
     pointer-events: all;
     z-index: 100;
   }
+
   .burger.open .fa-bars {
     display: none;
   }
@@ -110,6 +112,45 @@ import socialsJson from "../data/socials.json";
     pointer-events: none;
     z-index: 10;
     backdrop-filter: blur(2px) grayscale(0.5);
+  }
+
+  a.current {
+    position: relative;
+  }
+  a.current::after {
+    content: "";
+    position: absolute;
+    width: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -5px;
+    height: 20px;
+    background-image: url("/UnderLine.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  @media only screen and (min-width: 650px) {
+    .MainNav,
+    .MainNav.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .MainNav::before,
+    .MainNav.open::before {
+      display: none;
+    }
+    body.open::before {
+      display: none;
+    }
+    a.current::after {
+      width: 100%;
+      left: 6px;
+      transform: translateX(0);
+      bottom: auto;
+      top: 80%;
+      height: 30px;
+    }
   }
 </style>
 <script>
