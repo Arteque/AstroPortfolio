@@ -18,15 +18,15 @@ import socialsJson from "../data/socials.json";
           class="color-mode-options invisible group-hover/item:visible bg-text text-background p-2 absolute top-[0] left-[100%] w-max z-10 shadow-xl shadow-background rounded-xl"
         >
           <li class="hover:bg-texthover transition-all" data-color="light">
-            <i class="fa-regular fa-lightbulb text-background"></i>
+            <i class="fa-regular fa-lightbulb text-text"></i>
             <span class="text">Light mode</span>
           </li>
           <li class="hover:bg-texthover transition-all" data-color="dark">
-            <i class="fa-solid fa-moon text-background"></i>
+            <i class="fa-solid fa-moon text-text"></i>
             <span class="text">Dark mode</span>
           </li>
           <li class="hover:bg-texthover transition-all" data-color="system">
-            <i class="fa-solid fa-computer text-background"></i>
+            <i class="fa-solid fa-computer text-text"></i>
             <span class="text">System</span>
           </li>
         </ul>
@@ -68,7 +68,7 @@ import socialsJson from "../data/socials.json";
           <i class="fa-solid fa-times fa-2x"></i>
         </div>
         <ul
-          class="MainNav absolute w-full pointer-events-auto z-100 top-[110%] right-0 bg-light p-5 rounded-b-xl rounded-tl-xl
+          class="MainNav absolute w-full pointer-events-auto z-100 top-[110%] right-0 bg-text p-5 rounded-b-xl rounded-tl-xl
           sm:relative sm:flex sm:gap-2 sm:opacity-1 sm:bg-none sm:rounded-xl sm:font-semibold text-background"
         >
           <li>
@@ -111,10 +111,15 @@ import socialsJson from "../data/socials.json";
     top: -10px;
     right: 4px;
     rotate: 45deg;
-    background-color: rgb(233 233 233 / var(--tw-bg-opacity));
+    background-color: var(--color-text);
     width: 20px;
     aspect-ratio: 1;
     border-radius: 5px 0 0 0;
+  }
+  body[data-color="light"] {
+    .MainNav::before {
+      background-color: var(--color-background);
+    }
   }
   .MainNav {
     opacity: 0;
@@ -216,5 +221,15 @@ import socialsJson from "../data/socials.json";
       //set Colormode in Local Storage
       localStorage.setItem("colorMode", item.dataset.color);
     });
+
+    function checkColorModeinStorage() {
+      if (!localStorage.getItem("colorMode")) return;
+      return localStorage.getItem("colorMode");
+    }
+
+    document.body.dataset.color = checkColorModeinStorage();
+    colorModeToggleStatus.innerHTML = colorModeToggler.querySelector(
+      `[data-color=${checkColorModeinStorage()}]`
+    ).innerHTML;
   });
 </script>
