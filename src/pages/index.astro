@@ -13,29 +13,42 @@ import Contact from "../components/Contact.astro";
     style="background-image:url(/BgDots.svg); background-size:cover;background-position:bottom; background-repeat: no-repeat;"
   >
     <Wrapper
-      classes="flex flex-col justify-end h-[100svh] text-center sm:flex-row-reverse sm:items-center"
-    >
-      <div class="col-1">
-        <h1 class="mt-10">
-          <span class="uppercase text-light mb-2 block"> Ahmed Lemssiah </span>
-          <span class="uppercase text-xl font-black text-light block">
+      classes="flex flex-col justify-end h-[100svh] text-center sm:flex-row-reverse sm:items-center sm:gap-10">
+      <div class="col-1 sm:self-center">
+        <h1 class="mt-10 
+        sm:mt-0        
+        ">
+          <span class="uppercase text-light mb-2 block
+          sm:text-xl
+          "> Ahmed Lemssiah </span>
+          <span class="uppercase text-xl font-black text-light 
+          sm:text-7xl
+          sm:text-center
+          sm:block
+          sm:my-10
+          ">
             Frontend<em
-              class="text-[2rem] text-green inline-block rotate-[25deg] scale-150 z-0 font-black mix-blend-difference"
+              class="text-[2rem] text-green inline-block rotate-[25deg] scale-150 z-0 font-black mix-blend-difference
+              sm:text-[3rem]
+              sm:block
+              "
               >Web</em
             >
             Entwickler
           </span>
         </h1>
-        <p class="text-light text-center text-xs mt-2">
+        <p class="text-light text-center text-xs mt-2
+        sm:text-xl
+        ">
           Ich manipuliere Pixel, um Visionen ins Leben zur Erwecken
         </p>
         {
           toolsJson && (
-            <ul class="flex gap-4 mx-auto w-fit my-5">
+            <ul class="flex gap-4 mx-auto w-fit my-5 sm:my-10">
               {toolsJson.map((item) => (
                 <li>
                   <a href={item.url} title={item.title}>
-                    <img class="h-[30px]" src={item.icon} alt={item.name} />
+                    <img class="h-[30px] sm:h-[50px]" src={item.icon} alt={item.name} />
                   </a>
                 </li>
               ))}
@@ -48,7 +61,15 @@ import Contact from "../components/Contact.astro";
           </a>
         </div>
       </div>
-      <div class="col-2 sm:w-[50vw] sm:max-w-[1000px]">
+      <div class="col-2 
+       sm:z-100
+       sm:pointer-events-none
+       sm:w-[50vw] 
+       sm:max-w-[800px]
+       sm:h-[90svh]
+       sm:overflow-hidden
+       sm:self-end
+      ">
         <img
           class="w-[70%] mx-auto translate-y-10 sm:w-full block"
           src="/Avatar.svg"

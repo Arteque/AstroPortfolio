@@ -1,8 +1,7 @@
 ---
 import ButtonInline from "./ui/ButtonInline.astro";
 ---
-
-<button class="absolute bottom-0 right-0 z-10 pointer-events-auto">
+<button class="showFormBtn absolute bottom-0 right-0 z-10 pointer-events-auto">
   <img
     class="w-[32px]"
     src="/Message.svg"
@@ -144,7 +143,7 @@ import ButtonInline from "./ui/ButtonInline.astro";
   }
 </style>
 <script>
-  const messageBtn = document.querySelector("button");
+  const messageBtn = document.querySelector(".showFormBtn");
   const contactForm = document.querySelector("form");
   messageBtn.addEventListener("click", (e) => {
     e.preventDefault();
