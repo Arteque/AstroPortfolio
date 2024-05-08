@@ -12,6 +12,7 @@ export default {
 			lightgreen: "#8FF299"
 			*/
 			text: "rgba(var(--text))",
+			texthover:"rgba(var(--texthover))",
 			background: "rgba(var(--background))",
 			blue: "rgba(var(blue))",
 			orange: "rgba(var(--orange))",

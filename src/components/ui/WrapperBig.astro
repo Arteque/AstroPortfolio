@@ -2,7 +2,9 @@
 const { classes } = Astro.props;
 ---
 
-<div class={`big-wrapper mx-auto w-[90%] sm:max-w-[110%] pointer-events-none ${classes}`}>
+<div
+  class={`big-wrapper w-[90%] mx-auto sm:max-w-[1600px] pointer-events-none translate-x-[-50%] left-[50%]  ${classes}`}
+>
   <slot />
 </div>
 <style>

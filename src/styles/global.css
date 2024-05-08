@@ -3,33 +3,9 @@
     padding:0;
     box-sizing:border-box;
 }
-
-
-.dark{
-    --text: 233, 233, 233;
-    --background: 13, 37, 74;
-    --blue: 17, 71, 151;
-    --orange: 223, 99, 52;
-    --green: 69, 203, 83;
-    --lightgreen: 143, 242, 153;
-}
-.light{
-    --text: 13, 37, 74;
-    --background: 233, 233, 233;
-    --blue: 17, 71, 151;
-    --orange: 223, 99, 52;
-    --green: 69, 203, 83;
-    --lightgreen: 143, 242, 153;
-}
-
-header{
-    z-index: 100;
-}
-ul[class]{
-    list-style:none;
-}
 :root{
     --text: 13, 37, 74;
+    --texthover: 20, 51, 97;
     --background: 233, 233, 233;
     --blue: 17, 71, 151;
     --orange: 223, 99, 52;
@@ -39,10 +15,35 @@ ul[class]{
 @media (prefers-color-scheme: dark) {
     :root{
         --text: 233, 233, 233;
+        --texthover: 201, 201, 201;
         --background: 13, 37, 74;
         --blue: 17, 71, 151;
         --orange: 223, 99, 52;
         --green: 69, 203, 83;
         --lightgreen: 143, 242, 153;
     }
+}
+[data-color="dark"]{
+    --text: 233, 233, 233;
+    --texthover: 201, 201, 201;
+    --background: 13, 37, 74;
+    --blue: 17, 71, 151;
+    --orange: 223, 99, 52;
+    --green: 69, 203, 83;
+    --lightgreen: 143, 242, 153;
+}
+[data-color="light"]{
+    --text: 13, 37, 74;
+    --texthover: 20, 51, 97;
+    --background: 233, 233, 233;
+    --blue: 17, 71, 151;
+    --orange: 223, 99, 52;
+    --green: 69, 203, 83;
+    --lightgreen: 143, 242, 153;
+}
+header{
+    z-index: 100;
+}
+ul[class]{
+    list-style:none;
 }

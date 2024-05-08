@@ -6,14 +6,43 @@ import socialsJson from "../data/socials.json";
 
 <header class="fixed w-full left-0 right-0 top-0">
   <Wrapper>
-    <div class="top-header flex justify-end items-center h-12">
+    <div class="top-header flex justify-between items-center h-12">
+      <div
+        class="color-mode-toggler group/item cursor-pointer hover:bg-background-1/2 relative flex gap-2 items-center px-4 py-2 rounded-xl bg-text text-background fill-background"
+      >
+        <span class="status">
+          <i class="fa-regular fa-lightbulb text-background"></i>
+          <span class="text">Light mode</span>
+        </span>
+        <ul
+          class="color-mode-options invisible group-hover/item:visible bg-text text-background p-2 absolute top-[0] left-[100%] w-max z-10 shadow-xl shadow-background rounded-xl"
+        >
+          <li class="hover:bg-texthover transition-all" data-color="light">
+            <i class="fa-regular fa-lightbulb text-background"></i>
+            <span class="text">Light mode</span>
+          </li>
+          <li class="hover:bg-texthover transition-all" data-color="dark">
+            <i class="fa-solid fa-moon text-background"></i>
+            <span class="text">Dark mode</span>
+          </li>
+          <li class="hover:bg-texthover transition-all" data-color="system">
+            <i class="fa-solid fa-computer text-background"></i>
+            <span class="text">System</span>
+          </li>
+        </ul>
+      </div>
+
       {
         socialsJson && (
           <ul class="social flex gap-2">
             {socialsJson.map((item) => (
               <li>
                 <a href={item.url} target="_blank" title={item.title}>
-                  <img src={item.icon} alt={item.title} class="light:invert" />
+                  <img
+                    src={item.icon}
+                    alt={item.title}
+                    class="invert dark:invert-0"
+                  />
                 </a>
               </li>
             ))}
@@ -26,7 +55,11 @@ import socialsJson from "../data/socials.json";
     >
       <div class="logo pl-2">
         <a href="/">
-          <img src="/MainLogo.svg" alt="Ahmed Lemssiah Portfolio Logo" class=" light:brightness-[0] light:invert" />
+          <img
+            src="/MainLogo.svg"
+            alt="Ahmed Lemssiah Portfolio Logo"
+            class="brightness-[0] invert dark:brightness-100 dark:invert-0"
+          />
         </a>
       </div>
       <nav>
@@ -163,5 +196,25 @@ import socialsJson from "../data/socials.json";
     burger.classList.toggle("open");
     MainNav.classList.toggle("open");
     body.classList.toggle("open");
+  });
+
+  const colorModeToggler = document.querySelector(
+    "header div.color-mode-toggler"
+  );
+  const colorModeToggleStatus = colorModeToggler.querySelector(".status");
+  const colorModeOptions = document.querySelectorAll(
+    "ul.color-mode-options li"
+  );
+  colorModeOptions.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      document.body.dataset.color = item.dataset.color;
+
+      //Set the Menu to the current data
+      colorModeToggleStatus.innerHTML = item.innerHTML;
+      //set Colormode in Local Storage
+      localStorage.setItem("colorMode", item.dataset.color);
+    });
   });
 </script>

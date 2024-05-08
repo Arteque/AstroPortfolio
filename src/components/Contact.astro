@@ -1,22 +1,26 @@
 ---
 import ButtonInline from "./ui/ButtonInline.astro";
 ---
-<button class="showFormBtn absolute bottom-0 right-0 z-10 pointer-events-auto sm:p-5">
+
+<button
+  class="showFormBtn absolute bottom-0 right-0 z-10 pointer-events-auto sm:p-5"
+>
   <img
     class="w-[32px] sm:w-[50px]"
     src="/Message.svg"
     alt="Ahmed Lemssiah per Mail Kontaktieren!"
   />
-  <i class="fas fa-times fa-2x text-text hidden"></i>
+  <i class="fas fa-times fa-2x hidden"></i>
 </button>
-<form class="p-5 
-max-w-[90%] 
-mx-auto bg-blue rounded-lg text-text
+<form
+  class="p-5
+max-w-[90%]
+mx-auto bg-text text-background rounded-lg
 sm:max-w-[400px]
 sm:mx-none
 sm:ml-auto
-sm:mr-[2rem]
-">
+sm:mr-[2rem]"
+>
   <div class="sm:col-span-3 mb-5">
     <label
       for="status"
@@ -103,7 +107,7 @@ sm:mr-[2rem]
       <input type="checkbox" name="inputshutz" id="inputshutz" />
       Ich habe die <ButtonInline
         href="/datenschutz"
-        class="text-text underline font-semibold"
+        class="text-background underline font-semibold"
         target="_blank">Datenschutz</ButtonInline
       > zur Kenntnis genommen und wurde informiert, dass die von mir angegebenen
       Daten nur zum Zweck der Bearbeitung meiner Nachricht gespeichert werden und
@@ -136,7 +140,7 @@ sm:mr-[2rem]
   button.open {
     bottom: auto;
     top: 0;
-    right: 0;
+    right: 0px;
     transition: all 0.5s;
   }
   button.open img {
@@ -144,9 +148,9 @@ sm:mr-[2rem]
   }
   button.open i {
     display: inline-block;
-    background-color: var(--color-blue);
+    background-color: var(--color-text);
     padding: 5px;
-    border-radius: 0 10px 0 0;
+    border-radius: 0 10px 10px 0;
   }
 </style>
 <script>
