@@ -2,14 +2,12 @@
 import Wrapper from "../components/ui/Wrapper.astro";
 import Layout from "../layouts/Layout.astro";
 import toolsJson from "../data/tools.json";
-import WrapperBig from "../components/ui/WrapperBig.astro";
-import Contact from "../components/Contact.astro";
 ---
 
 <Layout title="Index">
   <section
     id="hero"
-    class="bg-dark h-screen overflow-hidden"
+    class="bg-background h-screen overflow-hidden"
     style="background-image:url(/BgDots.svg); background-size:cover;background-position:bottom; background-repeat: no-repeat;"
   >
     <Wrapper
@@ -18,10 +16,10 @@ import Contact from "../components/Contact.astro";
         <h1 class="mt-10 
         sm:mt-0        
         ">
-          <span class="uppercase text-light mb-2 block
+          <span class="uppercase text-text mb-2 block
           sm:text-xl
           "> Ahmed Lemssiah </span>
-          <span class="uppercase text-xl font-black text-light 
+          <span class="uppercase text-xl font-black text-text 
           sm:text-7xl
           sm:text-center
           sm:block
@@ -37,18 +35,18 @@ import Contact from "../components/Contact.astro";
             Entwickler
           </span>
         </h1>
-        <p class="text-light text-center text-xs mt-2
+        <p class="text-text text-center text-xs mt-2
         sm:text-xl
         ">
           Ich manipuliere Pixel, um Visionen ins Leben zur Erwecken
         </p>
         {
           toolsJson && (
-            <ul class="flex gap-4 mx-auto w-fit my-5 sm:my-10">
+            <ul class="flex gap-4 mx-auto w-fit my-5 sm:my-10 bg-text p-5 rounded-xl shadow-xl dark:bg-background dark:shadow-none">
               {toolsJson.map((item) => (
                 <li>
                   <a href={item.url} title={item.title}>
-                    <img class="h-[30px] sm:h-[50px]" src={item.icon} alt={item.name} />
+                    <img class="h-[30px] sm:h-[50px]" src={item.icon} alt={item.name}/>
                   </a>
                 </li>
               ))}
@@ -56,7 +54,7 @@ import Contact from "../components/Contact.astro";
           )
         }
         <div class="call">
-          <a href="" class="call text-light font-black text-2xl uppercase">
+          <a href="" class="call text-text font-black text-2xl uppercase">
             Portfolio
           </a>
         </div>
@@ -78,9 +76,13 @@ import Contact from "../components/Contact.astro";
       </div>
     </Wrapper>
   </section>
-  <WrapperBig classes="fixed bottom-0 left-0 right-0 pointer-events-none">
-    <Contact />
-  </WrapperBig>
+
+  <section id="about">
+    <Wrapper>
+      
+    </Wrapper>
+  </section>
+
 </Layout>
 
 <style>

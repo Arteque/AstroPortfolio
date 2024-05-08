@@ -2,7 +2,9 @@
 import { ViewTransitions } from 'astro:transitions';
 import "../styles/global.css";
 import Header from '../components/Header.astro';
-
+import WrapperBig from '../components/ui/WrapperBig.astro';
+import Contact from '../components/Contact.astro';
+import Setup from "../components/Setup.astro"
 
 interface Props {
   title: string;
@@ -38,5 +40,33 @@ image} = Astro.props;
   <body>
     <Header />
     <slot />
+
+    <WrapperBig classes="fixed bottom-0 left-0 right-0 pointer-events-none">
+      <Setup />
+      <Contact />
+    </WrapperBig>
   </body>
+  <script is:inline>
+    /*
+      // NOTE: This should be set based on some kind of toggle or theme selector.
+    // I've added this here for demonstration purposes
+    localStorage.setItem("theme", "light");
+
+// If the user has selected a theme, use that
+const selectedTheme = localStorage.getItem("theme");
+
+if (selectedTheme) {
+  document.body.classList.add(selectedTheme);
+
+  // Else if the users OS preferences prefers dark mode
+} else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+  document.body.classList.add("dark");
+
+  // Else use light mode
+} else {
+  document.body.classList.add("light");
+}
+*/
+  </script>
+
 </html>

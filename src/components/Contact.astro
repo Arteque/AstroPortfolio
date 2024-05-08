@@ -1,15 +1,22 @@
 ---
 import ButtonInline from "./ui/ButtonInline.astro";
 ---
-<button class="showFormBtn absolute bottom-0 right-0 z-10 pointer-events-auto">
+<button class="showFormBtn absolute bottom-0 right-0 z-10 pointer-events-auto sm:p-5">
   <img
-    class="w-[32px]"
+    class="w-[32px] sm:w-[50px]"
     src="/Message.svg"
     alt="Ahmed Lemssiah per Mail Kontaktieren!"
   />
-  <i class="fas fa-times fa-2x text-light hidden"></i>
+  <i class="fas fa-times fa-2x text-text hidden"></i>
 </button>
-<form class="p-5 max-w-[90%] mx-auto bg-blue rounded-lg text-light">
+<form class="p-5 
+max-w-[90%] 
+mx-auto bg-blue rounded-lg text-text
+sm:max-w-[400px]
+sm:mx-none
+sm:ml-auto
+sm:mr-[2rem]
+">
   <div class="sm:col-span-3 mb-5">
     <label
       for="status"
@@ -96,7 +103,7 @@ import ButtonInline from "./ui/ButtonInline.astro";
       <input type="checkbox" name="inputshutz" id="inputshutz" />
       Ich habe die <ButtonInline
         href="/datenschutz"
-        class="text-light underline font-semibold"
+        class="text-text underline font-semibold"
         target="_blank">Datenschutz</ButtonInline
       > zur Kenntnis genommen und wurde informiert, dass die von mir angegebenen
       Daten nur zum Zweck der Bearbeitung meiner Nachricht gespeichert werden und

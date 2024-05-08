@@ -13,7 +13,7 @@ import socialsJson from "../data/socials.json";
             {socialsJson.map((item) => (
               <li>
                 <a href={item.url} target="_blank" title={item.title}>
-                  <img src={item.icon} alt={item.title} />
+                  <img src={item.icon} alt={item.title} class="light:invert" />
                 </a>
               </li>
             ))}
@@ -22,11 +22,11 @@ import socialsJson from "../data/socials.json";
       }
     </div>
     <div
-      class="main-header relative rounded-2xl shadow-lg bg-light flex justify-between items-center"
+      class="main-header relative rounded-2xl shadow-lg bg-text flex justify-between items-center"
     >
       <div class="logo pl-2">
         <a href="/">
-          <img src="/MainLogo.svg" alt="Ahmed Lemssiah Portfolio Logo" />
+          <img src="/MainLogo.svg" alt="Ahmed Lemssiah Portfolio Logo" class=" light:brightness-[0] light:invert" />
         </a>
       </div>
       <nav>
@@ -36,7 +36,7 @@ import socialsJson from "../data/socials.json";
         </div>
         <ul
           class="MainNav absolute w-full pointer-events-auto z-100 top-[110%] right-0 bg-light p-5 rounded-b-xl rounded-tl-xl
-          sm:relative sm:flex sm:gap-2 sm:opacity-1 sm:bg-none sm:rounded-xl sm:font-semibold"
+          sm:relative sm:flex sm:gap-2 sm:opacity-1 sm:bg-none sm:rounded-xl sm:font-semibold text-background"
         >
           <li>
             <a
@@ -153,7 +153,7 @@ import socialsJson from "../data/socials.json";
     }
   }
 </style>
-<script>
+<script is:inline>
   const burger = document.querySelector(".burger");
   const MainNav = document.querySelector(".MainNav");
   const body = document.body;
