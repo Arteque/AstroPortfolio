@@ -44,19 +44,18 @@ import toolsJson from "../data/tools.json";
           toolsJson && (
             <ul
               class="flex gap-4 mx-auto w-fit my-5 
-              bg-text
               p-5 
               rounded-xl 
               shadow-xl 
               sm:my-10
-              dark:bg-background 
+              bg-text
             "
             >
               {toolsJson.map((item) => (
                 <li>
                   <a href={item.url} title={item.title}>
                     <img
-                      class="h-[30px] sm:h-[50px]"
+                      class="h-[30px] sm:h-[50px] dark:invert"
                       src={item.icon}
                       alt={item.name}
                     />
